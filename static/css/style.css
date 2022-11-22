@@ -1,0 +1,63 @@
+#Booking {
+    /* background-color: white; */
+    border: none;
+    color: black;
+    text-decoration: none;
+}
+#Booking:hover {
+    background-color:#7311f6 ;
+    border-radius: 2px;
+    color: white;
+    padding: 8px;
+    border:none;
+    margin:0;
+    cursor: pointer;
+
+ }
+ #alink{
+    text-decoration: none;
+    color: black;
+ }
+ .drop-item:hover{
+    cursor: pointer;
+    background-color:#7311f6 !important;
+ }
+ #alink:hover {
+    background-color:#7311f6 ;
+    border-radius: 2px;
+    color: white;
+    padding: 8px;
+    cursor: pointer;
+ }
+#alink2 {
+    position: relative;
+    right: 11em;
+}
+#alink2:hover {
+   background-color:#7311f6 ;
+   border-radius: 2px;
+   color: white;
+   padding: 8px;
+   cursor: pointer;
+}
+
+#alink3 {
+    position: relative;
+    right: 23em;
+}
+
+.carousel-inner .carousel-item img {
+    height: 35em;
+}
+
+.featurette-divider {
+    margin: 5rem 0;
+}
+.carousel-caption{
+
+    bottom: 11em;
+    background-color: black;
+    opacity: 0.7;
+
+
+}

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS::Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/style.css"/>
+    <style>
+        .card-registration .select-input.form-control[readonly]:not([disabled]) {
+            font-size: 1rem;
+            line-height: 2.15;
+            padding-left: .75em;
+            padding-right: .75em;
+        }
+
+        .card-registration .select-arrow {
+            top: 13px;
+        }
+
+        #savebtn {
+            background-color: #7311f6;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Navbar Begins-->
+  {{>navbar}}
+    <!--Navbar Ends-->
+    <section class="h-60 ">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col">
+                    <div class="card card-registration my-4">
+                        <div class="row g-0">
+                            <div class="col-xl-6 d-none d-xl-block">
+                                <img src="https://i.pinimg.com/originals/58/f0/63/58f063c0879b1e8af965298de00e4146.jpg"
+                                    alt="Sample photo" class="img-fluid"
+                                    style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card-body p-md-5 text-black">
+                                    <h3 class="mb-5 text-uppercase">Book Your Cab Now!</h3>
+                                    <form name="registration" class="form-control"
+                                        onsubmit="return formValidation(event);" action="index.html">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="text" id="form3Example1m"
+                                                        class="form-control form-control-lg" name="firstName" />
+                                                    <label class="form-label" for="form3Example1m">First name</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="text" id="form3Example1n"
+                                                        class="form-control form-control-lg" name="secondName" />
+                                                    <label class="form-label" for="form3Example1n">Last name</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="text" id="form3Example1m1"
+                                                        class="form-control form-control-lg" name="from" />
+                                                    <label class="form-label" for="form3Example1m1">From</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="text" id="form3Example1n1"
+                                                        class="form-control form-control-lg" name="to" />
+                                                    <label class="form-label" for="form3Example1n1">To</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <input type="text" id="form3Example8" class="form-control form-control-lg"
+                                                name="address" />
+                                            <label class="form-label" for="form3Example8">Address</label>
+                                        </div>
+
+                                        <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+
+                                            <h6 class="mb-0 me-4">Gender: </h6>
+
+                                            <div class="form-check form-check-inline mb-0 me-4">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="femaleGender" value="option1"  />
+                                                <label class="form-check-label" for="femaleGender">Female</label>
+                                            </div>
+
+                                            <div class="form-check form-check-inline mb-0 me-4">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="maleGender" value="option2" required />
+                                                <label class="form-check-label" for="maleGender">Male</label>
+                                            </div>
+
+                                            <div class="form-check form-check-inline mb-0">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="otherGender" value="option3" />
+                                                <label class="form-check-label" for="otherGender">Other</label>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4">
+
+                                                <select class="form-control" name="stateList">
+                                                    <option value="1">State</option>
+                                                    <option value="2">Kerala</option>
+                                                    <option value="3">Tamil Nadu</option>
+                                                    <option value="4">Karnataka</option>
+                                                </select>
+
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+
+                                                <select class="form-control" name="cityList">
+                                                    <option value="1">City</option>
+                                                    <option value="2">Option 1</option>
+                                                    <option value="3">Option 2</option>
+                                                    <option value="4">Option 3</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <select class="form-control" name="cabType">
+                                                <option value="1">Cab Type</option>
+                                                <option value="2">Premium</option>
+                                                <option value="3">Classic</option>
+
+                                            </select>
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <input type="text" id="form3Example90" class="form-control form-control-lg"
+                                                name="pinCode" />
+                                            <label class="form-label" for="form3Example90">Pincode</label>
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <input type="text" id="form3Example99" class="form-control form-control-lg"
+                                                name="contactNumber" />
+                                            <label class="form-label" for="form3Example99">Contact Number</label>
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <input type="text" id="form3Example97" class="form-control form-control-lg"
+                                                name="email" />
+                                            <label class="form-label" for="form3Example97">Email ID</label>
+                                        </div>
+
+                                        <div class="d-flex justify-content-end pt-3">
+                                            <button type="button" class="btn btn-danger btn-lg">Reset all</button>
+                                            <button type="submit" id="savebtn" class="btn  btn-lg ms-2">Confirm
+                                                Boking</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+<script>
+    function formValidation(e) {
+        e.preventDefault();
+        var firstName = document.registration.firstName;
+        var secondName = document.registration.secondName;
+        var from = document.registration.from;
+        var to = document.registration.to;
+        var gender = document.registration.inlineRadioOptions;
+        var state = document.registration.stateList;
+        var email = document.registration.email;
+        var city = document.registration.cityList;
+        var cabType = document.registration.cabType;
+        var pinCode = document.registration.pinCode;
+        var contactNumber = document.registration.contactNumber;
+        if (validate_firstName(firstName, secondName)) {
+                if (validate_from(from,to)) {
+                    // if (validate_to(to)) {
+                    //     if (validate_gender(gender)) {
+                    //         if (validate_state(state)) {
+                    //             if (validate_email(email)) {
+                    //                 if (validate_city(city)) {
+                    //                     if (validate_cabType(cabType)) {
+                    //                         if (validate_pinCode(pinCode)) {
+                    //                             if (validate_contactNumber(contactNumber)) {
+                    //                                 if (validate_cabType(cabType)) {
+
+
+                    //                                 }
+                    //                             }
+                    //                         }
+                    //                     }
+                    //                 }
+                    //             }
+                    //         }
+                    //     }
+                    }
+                }
+                return false;
+        }
+
+
+
+    function validate_firstName(firstName, secondName) {
+        var letters = /^[A-Za-z]+$/;
+        if (firstName.value.match(letters) && secondName.value.match(letters)) {
+            return true;
+        }
+        else {
+            alert('Username must have alphabet characters only');
+            firstName.focus();
+            secondName.focus();
+            return false;
+        }
+
+    }
+    function validate_from(from,to) {
+        if (from.value != to.value) {
+            return true;
+
+        }
+        else {
+            alert("Same destination");
+            document.registration.from.focus();
+            document.registration.to.focus();
+            return false;
+        }
+    }
+
+</script>
+
+</html>
